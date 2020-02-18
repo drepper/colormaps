@@ -3,3 +3,4 @@ colormaps.sublime-workspace
 *-table-byte-????.csv
 *-table-float-????.csv
 *.svg
+__pycache__
