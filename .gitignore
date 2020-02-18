@@ -1,0 +1,5 @@
+colormaps.sublime-project
+colormaps.sublime-workspace
+*-table-byte-????.csv
+*-table-float-????.csv
+*.svg
