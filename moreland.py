@@ -108,7 +108,9 @@ def _unzip_rgb_triple(dataframe, column = 'RGB'):
     dataframe[column + '_b'] = unzipped_rgb['b']
 
 
-
+#
+# Base class, cannot be instantiated.
+#
 class _ColorMap:
     def __init__(self, name = None):
         self.name = name
