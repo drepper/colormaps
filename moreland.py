@@ -148,21 +148,23 @@ class _ColorMap:
         toyplot.svg.render(canvas, (fname if fname else self.name) + '.svg')
 
 
-    def get_table(self, length):
+    def get_table(self, length, byte = True, real = False):
         table = pandas.DataFrame({'scalar': numpy.linspace(0, 1, length)})
         table['sRGBColor'] = self.map_scalar_array(table['scalar'])
+        if byte:
+            table['RGB'] = table['sRGBColor'].apply(lambda rgb: rgb.get_upscaled_value_tuple())
+        if real:
+            table['sRGB'] = table['sRGBColor'].apply(lambda rgb: rgb.get_value_tuple())
         return table
 
     def write_table(self, length, basename = None, byte = True, real = True):
-        color_table = self.get_table(length)
+        color_table = self.get_table(length, byte, real)
         if byte:
-            color_table['RGB'] = color_table['sRGBColor'].apply(lambda rgb: rgb.get_upscaled_value_tuple())
             _unzip_rgb_triple(color_table, 'RGB')
             color_table.to_csv(((basename if basename else self.name) + '-table-byte-{:04}.csv').format(length),
                                index=False,
                                columns=['scalar', 'RGB_r', 'RGB_g', 'RGB_b'])
         if real:
-            color_table['sRGB'] = color_table['sRGBColor'].apply(lambda rgb: rgb.get_value_tuple())
             _unzip_rgb_triple(color_table, 'sRGB')
             color_table.to_csv(((basename if basename else self.name) + '-table-float-{:04}.csv').format(length),
                                index=False,
