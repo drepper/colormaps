@@ -6,7 +6,8 @@ according to the work of Kenneth Moreland as described at
 
 [http://www.kennethmoreland.com/color-maps/]
 
-These color maps allow mapping a scalar value from a finite range to a color.
+These color maps allow mapping a scalar value from a finite range to a color.  This is useful
+in heatmaps or space-filling curves.
 
 Objects with the predefined parameters can be created using the `make_*` functions
 like this:
@@ -48,6 +49,9 @@ are meant to be represented as color to the range [0,1] one selects the color wi
 to the mapped value.  The values are equal distance which means that the scalar value in the first column
 does not actually have to be used, the index into the table can for a value `v` can be computed with
 `(v-A)/(B-A)`.
+
+The color values are in this case given as a triple of bytes.  If the last parameter to the `get-color-maps.py`
+script is `float` instead of `byte` the color is given as a triple of floating-point values.
 
 
 Requirements
