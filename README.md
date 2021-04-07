@@ -4,7 +4,7 @@ Create Color Maps
 This is a Python module to create color maps with pretty much arbitrary size
 according to the work of Kenneth Moreland as described at
 
-(http://www.kennethmoreland.com/color-maps/)[http://www.kennethmoreland.com/color-maps/]
+[http://www.kennethmoreland.com/color-maps/](http://www.kennethmoreland.com/color-maps/)
 
 These color maps allow mapping a scalar value from a finite range to a color.  This is useful
 in heatmaps or space-filling curves.
