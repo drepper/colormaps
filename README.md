@@ -54,6 +54,20 @@ The color values are in this case given as a triple of bytes.  If the last param
 script is `float` instead of `byte` the color is given as a triple of floating-point values.
 
 
+Visualization
+-------------
+
+The `gen-svg.py` script can be used to generate a SVG file to visualize color maps.  It works only for byte
+maps with 256 colors.  As an example, the black body map in `black-body-table-byte-0256.csv` can be visualized
+with
+
+    ./gen-svg.py black-body-table-byte-0256.csv > black-body-256.svg
+
+The result looks like this:
+
+![black body map](black-body-256.svg)
+
+
 Requirements
 ------------
 
