@@ -67,6 +67,11 @@ The result looks like this:
 
 ![black body map](black-body-256.svg)
 
+With the additional `--fine` parameter each diagonal line has the same color.  The result is a picture with
+a much higher resolution:
+
+![fine-grained black body map](black-body-256-fine.svg)
+
 
 Requirements
 ------------
